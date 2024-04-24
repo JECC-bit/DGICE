@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+*{
+    font-family: "Poppins", sans-serif;
+}
+
+.navbar{
+    background-color: #F5F8EA;
+    font-wght: 600;
+    font-size: 18px;
+}
+
+.navbar img{
+    width: 60px;
+}
+
+carousel-item{
+    min-height: 350px;
+}
+
+.nosotros{
+    padding: 80px 0;
+    margin-bottom: 80px;
+    background-color: #F5F8EA;
+}
+
+.nosotros h2{
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 800;
+    padding-bottom: 20px;
+}
+
+.content{
+    padding: 50px 0;
+    margin-bottom: 80px;
+    background-color: #rgb(240,240,240);
+}
+
+.content h2{
+    /* color: #rgb(245, 248, 238); */
+    /* color: #F5F8EA; */
+    /* color: #CCDB94; */
+    font-size: 40px;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.content img{
+    width: 300px;
+}
+
+.actividad{
+    padding: 80px 0;
+    margin-bottom: 20px;
+}
+
+
+@media (max-width: 767px){
+    .content{
+        margin-bottom: 30px;
+    }
+
+    .nosotros{
+        margin-bottom: 10px;
+    }
+
+}
+
