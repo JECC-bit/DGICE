@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DGICE</title>
+    <link rel="stylesheet" href="registro.css"> <!-- Enlace al archivo CSS -->
+</head>
+<body>
+
+   
+    <div class="menu">
+        <div class="logo">
+            <img src="logo.jpg" alt="Logo">
+        </div>
+        <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Contacto</a></li>
+                <li><a href="#">¿Qué es un bootcamp?</a></li>
+            </ul>
+        </div>
+ 
+
+    <div class="formulario">
+        <h1>¡Regístrate!</h1>
+        <form action="#" method="POST">
+            <div class="campo">
+                <label for="nombres">Nombres: <span class="obligatorio">*</span></label>
+                <input type="text" id="nombres" name="nombres" required>
+            </div>
+            <div class="campo">
+                <label for="apellidos">Apellidos: <span class="obligatorio">*</span></label>
+                <input type="text" id="apellidos" name="apellidos" required>
+            </div>
+            <div class="campo">
+                <label for="correo">Correo Universitario: <span class="obligatorio">*</span></label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+            <div class="campo">
+                <label for="numero_cuenta">Número de Cuenta: <span class="obligatorio">*</span></label>
+                <input type="text" id="numero_cuenta" name="numero_cuenta" required>
+            </div>
+            <div class="campo">
+                <label for="contrasena">Contraseña: <span class="obligatorio">*</span></label>
+                <input type="password" id="contrasena" name="contrasena" required>
+            </div>
+            <div class="campo">
+                <label for="repetir_contrasena">Repetir Contraseña: <span class="obligatorio">*</span></label>
+                <input type="password" id="repetir_contrasena" name="repetir_contrasena" required>
+            </div>
+            <div class="campo">
+                <button type="submit">Registrarme</button>
+            </div>
+            <div class="campo">
+                <p class="cuenta">¿Ya tienes una cuenta? <a href="login.html">Iniciar sesión</a></p>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
