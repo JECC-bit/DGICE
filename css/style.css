@@ -14,6 +14,10 @@
     width: 60px;
 }
 
+.navbar .bi{
+    font-size: 30px;
+}
+
 carousel-item{
     min-height: 350px;
 }
@@ -55,6 +59,11 @@ carousel-item{
     margin-bottom: 20px;
 }
 
+/* #actividades-footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+} */
 
 @media (max-width: 767px){
     .content{
