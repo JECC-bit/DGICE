@@ -31,10 +31,19 @@
 
 @media (max-width: 767px){
     #main{
-        margin-top: 25%;
+        margin-top: 20%;
     }
     #contenido {
-        margin-left: 10%;
+        margin-left: 15%;
         padding: 1%;
+    }
+}
+
+@media (max-width: 1270px){
+    #barraLateralFija {
+        margin-top: 2%;
+    }
+    #contenido{
+        margin-top: 5%;
     }
 }
