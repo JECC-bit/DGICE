@@ -6,6 +6,7 @@
     border-right: 1px solid #e9ecef;
     padding: 1%;
 }
+
 #main{
     margin-top: 4%;
     height: 100%;
@@ -15,13 +16,18 @@
     list-style: none;
     padding: 5%;
     border-bottom: 1px solid #e9ecef;
+}
 
+#barraLateralRetraible span {
+    margin-right: 10px;
 }
 
 #contenido {
+    margin-top: 1%;
     margin-left: 20%;
     padding: 1%;
 }
+
 
 @media (max-width: 767px){
     #main{

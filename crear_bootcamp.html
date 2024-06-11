@@ -38,8 +38,8 @@
         </div>
     </div>
     <div class="container-fluid" id="main">
-        <!--? Barra lateral fija -->
         <div class="row">
+            <!--? Barra lateral fija -->
             <div class="col-2 bg-body-tertiary d-none d-md-block" id="barraLateralFija">
                 <ul class="nav flex-column">
                     <li class="nav-item">
@@ -50,7 +50,8 @@
                     </li>
                 </ul>
             </div>
-            <div class="col-10" id="contenido">
+            <!--? Contenido del formulario -->
+            <div class="col-9 col-lx-10" id="contenido">
                 <div class="container">
                     <div class="row">
                         <div class="col-12">
@@ -58,7 +59,7 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-12">
+                        <div class="col-11 col-lx-12">
                             <form action="crear_bootcamp.php" method="POST">
                                 <div class="mb-3">
                                     <label for="nombreBootcamp" class="form-label">Nombre del bootcamp</label>
@@ -85,12 +86,18 @@
                                     <textarea class="form-control" id="descripcionBootcamp" name="descripcionBootcamp" rows="3" required></textarea>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="fechaInicioBootcamp" class="form-label">Fecha de inicio del bootcamp</label>
-                                    <input type="date" class="form-control" id="fechaInicioBootcamp" name="fechaInicioBootcamp" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="fechaFinBootcamp" class="form-label">Fecha de fin del bootcamp</label>
-                                    <input type="date" class="form-control" id="fechaFinBootcamp" name="fechaFinBootcamp" required>
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-6">
+                                                <label for="fechaInicioBootcamp" class="form-label">Fecha de inicio del bootcamp</label>
+                                                <input type="date" class="form-control" id="fechaInicioBootcamp" name="fechaInicioBootcamp" required>
+                                            </div>
+                                            <div class="col-6">
+                                                <label for="fechaFinBootcamp" class="form-label">Fecha de fin del bootcamp</label>
+                                                <input type="date" class="form-control" id="fechaFinBootcamp" name="fechaFinBootcamp" required>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </form>
                             <div class="mb-3">
