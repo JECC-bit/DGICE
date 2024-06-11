@@ -15,7 +15,7 @@
     <!--? Barra de navegación -->
     <nav class="navbar bg-body-tertiary fixed-top navbar-expand-lg">
         <div class="container-fluid">
-            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#barraLateral" aria-controls="barraLateral" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#barraLateralRetraible" aria-controls="barraLateralRetraible" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <a href="Principal.html" class="navbar-brand"><img src="img/logo.png" alt="Logo"></a>
@@ -23,47 +23,17 @@
             
     </nav>
     <!--? Barra lateral retraible -->
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="barraLateral" aria-labelledby="barraLateralLabel">
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="barraLateralRetraible" aria-labelledby="barraLateralLabel">
         <div class="offcanvas-header">
             <h5 class="offcanvas-title" id="barraLateralLabel">Acciones</h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
         </div>
         <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-2"><span class="bi bi-bullseye"></span></div>
-                            <!--! Cambiar el active en la clase para indicar en la acción en la que está actualmente -->
-                            <!--! El aria-current es para indicar que se encuentra en la página actual, también cambiarla según sea el caso -->
-                            <div class="col-10"><a class="nav-link active" aria-current="page" href="#">Actividades asignadas</a></div>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-2"><span class="bi bi-graph-up"></span></div>
-                            <div class="col-10"><a class="nav-link" href="#">Progresos de los participantes</a></div>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-2"><span class="bi bi-people-fill"></span></div>
-                            <div class="col-10"><a class="nav-link" href="#">Equipos</a></div>
-                        </div>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-2"><span class="bi bi-diagram-3-fill"></span></div>
-                            <div class="col-10"><a class="nav-link" href="#">Administradores</a></div>
-                        </div>
-                    </div>
-                </li>
+                <!--! Cambiar el active en la clase para indicar en la acción en la que está actualmente -->
+                <!--! El aria-current es para indicar que se encuentra en la página actual, también cambiarla según sea el caso -->
+                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page"><span class="bi bi-plus-circle"></span> Crear bootcamp</a></li>
+                <li class="nav-item"><a href="#" class="nav-link active" aria-current="page"><span class="bi bi-list-stars"></span> Bootcamps existentes</a></li>
             </ul>
         </div>
     </div>
@@ -73,16 +43,10 @@
             <div class="col-2 bg-body-tertiary d-none d-md-block" id="barraLateralFija">
                 <ul class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"><span class="bi bi-bullseye"></span> Actividades asignadas</a>
+                        <a class="nav-link active" aria-current="page" href="#"><span class="bi bi-plus-circle"></span> Crear bootcamp</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="bi bi-graph-up"></span> Progresos de los participantes</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="bi bi-people-fill"></span> Equipos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="bi bi-diagram-3-fill"></span> Administradores</a>
+                        <a class="nav-link" href="#"><span class="bi bi-list-stars"></span> Bootcamps existentes</a>
                     </li>
                 </ul>
             </div>
@@ -99,6 +63,22 @@
                                 <div class="mb-3">
                                     <label for="nombreBootcamp" class="form-label">Nombre del bootcamp</label>
                                     <input type="text" class="form-control" id="nombreBootcamp" name="nombreBootcamp" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="encargadoBootcamp" class="from-label">Encargado(s) del bootcamp</label>
+                                    <select class="form-select" id="encargadoBootcamp" name="encargadoBootcamp" required>
+                                        <option value="1">Encargado 1</option>
+                                        <option value="2">Encargado 2</option>
+                                        <option value="3">Encargado 3</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="dependenciaBootcamp" class="form-label">Dependencia en la que se realiza el bootcamp</label>
+                                    <select class="form-select" id="dependenciaBootcamp" name="dependenciaBootcamp" required>
+                                        <option value="1">Dependencia 1</option>
+                                        <option value="2">Dependencia 2</option>
+                                        <option value="3">Dependencia 3</option>
+                                    </select>
                                 </div>
                                 <div class="mb-3">
                                     <label for="descripcionBootcamp" class="form-label">Descripción del bootcamp</label>
