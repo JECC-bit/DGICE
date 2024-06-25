@@ -55,10 +55,10 @@ function processFile(file) {
         reader.addEventListener('load', (e) => {
             const fileUrl = reader.result;
             const image = `
-                <div id='${id}' class='file-container'>
-                    <div class='status'>
-                        <span>${file.name}</span>
-                        <span class='status-text'>
+                <div id='${id}' class='file-container container'>
+                    <div class='status row'>
+                        <span class='col-6'>${file.name}</span>
+                        <span class='status-text col-4'>
                             Cargando...
                         </span>
                     </div>
@@ -84,10 +84,10 @@ async function uploadFile(file, id) {
             body: formData
         });
         const responseText = await response.text();
-        document.querySelector(`#${id} .status-text`).innerHTML = `<span class='success'>Archivo subido correctamente</span> <span class='bi bi-x-lg align-content-start' onclick='deleteFile("${id}")'></span>`;
+        document.querySelector(`#${id} .status-text`).innerHTML = `<span class='success col-4'>Archivo subido correctamente</span> <span class='bi bi-x-lg align-content-end col-2' onclick='deleteFile("${id}")'></span>`;
         console.log(responseText);
     } catch (error) {
-        document.querySelector(`#${id} .status-text`).innerHTML = `<span class='failure'>El archivo no pudo subirse</span>`;
+        document.querySelector(`#${id} .status-text`).innerHTML = `<span class='failure col-4'>El archivo no pudo subirse</span>`;
     }
 }
 

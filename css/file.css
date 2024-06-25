@@ -15,7 +15,7 @@
     border: 2px dashed #618ac9;
 }
 
-.drop-area button{
+.drop-area label{
     padding: 10px 25px;
     font-size: 18px;
     border: none;
@@ -36,6 +36,11 @@
 
 #preview{
     margin-top: 10px;
+}
+
+#preview .bi{
+    font-size: 15px;
+    cursor: pointer;
 }
 
 .status-text{
