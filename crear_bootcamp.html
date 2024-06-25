@@ -100,42 +100,41 @@
                                         </div>
                                     </div>
                                 </div>
-                                <!-- Agregamos la opción de subir varios archivos -->
-                                
-                            </form>
-                            <div class="mb-3">
-                                <button type="submit" class="btn btn-primary">Crear bootcamp</button>
-                            </div>
-                            <div class="container">
-                                <div class="row">
-                                    <div class="col-6">
-                                        <div class=" drop-area">
-                                            <div class="container text-center" id="contenidoInputFiles">
-                                                <div class="row justify-content-md-center">
-                                                    <div class="col-12">
-                                                        <i class="bi bi-cloud-arrow-up-fill"></i>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <h4>Arrastra y suelta archivos</h4>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <span>o</span>
-                                                    </div>
-                                                    <div class="col-12">
-                                                        <button>Selecciona tus archivos</button>
+                                <!--* Agregamos la opción de subir varios archivos -->
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <div class=" drop-area">
+                                                <div class="container text-center" id="contenidoInputFiles">
+                                                    <div class="row justify-content-md-center">
+                                                        <div class="col-12">
+                                                            <i class="bi bi-cloud-arrow-up-fill"></i>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <h4>Arrastra y suelta archivos</h4>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <span>o</span>
+                                                        </div>
+                                                        <div class="col-12">
+                                                            <label for="input-file" class="btn btn-primary">Selecciona archivos</label>
+                                                        </div>
                                                     </div>
                                                 </div>
+                                                <input type="file" name="#" id="input-file" hidden multiple>
                                             </div>
-                                            <input type="file" name="#" id="input-file" hidden multiple>
                                         </div>
-                                    </div>
-                                    <div class="col-6">
-                                        <div class="mb-3" id="preview">
-                                            <h5>Archivos subidos: </h5>
+                                        <div class="col-6">
+                                            <div class="mb-3" id="preview">
+                                                <h5>Archivos subidos: </h5>
+                                            </div>
                                         </div>
+                                        <script src="js/files.js"></script>
                                     </div>
-                                    <script src="js/files.js"></script>
                                 </div>
+                            </form>
+                            <div class="mt-3">
+                                <button type="submit" class="btn btn-primary">Crear bootcamp</button>
                             </div>
                         </div>
                     </div>

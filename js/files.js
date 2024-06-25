@@ -1,18 +1,18 @@
 const dropArea = document.querySelector('.drop-area');
 const dragText = dropArea.querySelector('h4');
-const button = dropArea.querySelector('button');
 const input = dropArea.querySelector('#input-file');
 let files;
 
-button.addEventListener('click', (e) => {
-    input.click();
-});
 
 input.addEventListener('change', (e) => {
-    files = this.files;
-    dropArea.classList.add('active');
-    showFiles(files);
-    dropArea.classList.remove('active');
+    files = input.files;
+    try{
+        dropArea.classList.add('active');
+        showFiles(files);
+        dropArea.classList.remove('active');
+    }catch (error){
+        console.log(error);
+    }
 });
 
 dropArea.addEventListener('dragover', (e) => {
@@ -47,7 +47,7 @@ function showFiles(files) {
 
 function processFile(file) {
     const docType = file.type;
-    const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.ms-powerpoint', 'application/vnd.openxmlformats-officedocument.presentationml.presentation', 'image/jpeg', 'image/png', 'image/gif', 'image/jpg', 'application/zip', 'application/rar' ];
+    const validTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', 'application/vnd.ms-excel', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/vnd.ms-powerpoint', 'application/vnd.openxmlformats-officedocument.presentationml.presentation', 'image/jpeg', 'image/png', 'image/gif', 'image/jpg', 'application/zip', 'application/rar', 'video/mp4', 'audio/mpeg', 'audio/mp3', 'audio/wav'];
     if (validTypes.includes(docType)){
         const reader = new FileReader();
         const id = 'file-' + Math.random().toString(32).substring(7);
@@ -84,11 +84,15 @@ async function uploadFile(file, id) {
             body: formData
         });
         const responseText = await response.text();
-        document.querySelector(`#${id} .status-text`).innerHTML = `<span class='success'>Archivo subido correctamente</span>`;
+        document.querySelector(`#${id} .status-text`).innerHTML = `<span class='success'>Archivo subido correctamente</span> <span class='bi bi-x-lg align-content-start' onclick='deleteFile("${id}")'></span>`;
         console.log(responseText);
     } catch (error) {
         document.querySelector(`#${id} .status-text`).innerHTML = `<span class='failure'>El archivo no pudo subirse</span>`;
     }
+}
+
+function deleteFile(id) {
+    document.querySelector(`#${id}`).remove();
 }
 
 //!!! Para el php sugiere el siguiente código
