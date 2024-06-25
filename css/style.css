@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
 
 *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
 
@@ -42,9 +45,9 @@ carousel-item{
 }
 
 .content h2{
-    /* color: #rgb(245, 248, 238); */
-    /* color: #F5F8EA; */
-    /* color: #CCDB94; */
+    /* color: #rgb(245, 248, 238);   Gris del fondo*/ 
+    /* color: #F5F8EA;  Verde bajo */
+    /* color: #CCDB94;  Verde fuerte*/
     font-size: 40px;
     text-transform: uppercase;
     font-weight: 800;
@@ -74,5 +77,8 @@ carousel-item{
         margin-bottom: 10px;
     }
 
+    .drop-area{
+        width: 100%;
+    }
 }
 
