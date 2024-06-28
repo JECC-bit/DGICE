@@ -12,11 +12,6 @@ footer{
     padding: 0%;
 }
 
-#actividades-lista{
-    padding: 0%;
-    margin: 0%;
-}
-
 @media (max-width: 992px){
     footer{
         margin-left: 0%;
@@ -60,5 +55,9 @@ footer{
     }
     #contenido{
         margin-right: 100%;
+    }
+    #actividades-lista{
+        padding: 0%;
+        margin: 0%;
     }
 }
