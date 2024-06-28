@@ -4,6 +4,10 @@
     margin-right: 10%; /* Ajusta el margen derecho según tu preferencia */
 }
 
+.content{
+    margin-bottom: 0%;
+}
+
 /* Estilo para el contenido que estará al lado derecho */
 .content-right {
     width: 100%; 
@@ -144,10 +148,10 @@ a {
 }
 
 #actividades-lista{
-    margin-left: 50%; 
+    margin-left: 25%; 
     margin-right: 45px; 
     margin-top: 1%;
-    margin-bottom: 5%;
+    margin-bottom: 0%;
 }
 
 #actividades-lista a{
@@ -195,7 +199,7 @@ a {
         height: auto;
     }
     #actividades-lista{
-        margin-left: 0;
+        margin-left: 15%;
     }
     .instructions{
         margin-left: 0;

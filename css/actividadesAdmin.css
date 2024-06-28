@@ -1,0 +1,22 @@
+.content{
+    margin: 0px;
+    padding: 0px;
+}
+
+footer{
+    margin-left: 20%;
+    margin-top: 5%;
+}
+
+@media (max-width: 992px){
+    footer{
+        margin-left: 0%;
+    }
+}
+
+@media (max-width: 767px){
+    #activity-button button{
+        width: 100px;
+        height: 150px;
+    }
+}
