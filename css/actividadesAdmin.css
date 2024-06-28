@@ -12,6 +12,11 @@ footer{
     padding: 0%;
 }
 
+#actividades-lista{
+    padding: 0%;
+    margin: 0%;
+}
+
 @media (max-width: 992px){
     footer{
         margin-left: 0%;
@@ -44,7 +49,10 @@ footer{
     }
     #activity-button a{
         width: 100%;
-        height: 100%;
+        height: 60px;
+    }
+    #activity-button .col-md-4{
+        margin-bottom: 5%;
     }
     #upper-part{
         margin-left: -10%;
@@ -53,5 +61,4 @@ footer{
     #contenido{
         margin-right: 100%;
     }
-    
 }
