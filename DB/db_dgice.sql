@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-07-2024 a las 02:02:44
+-- Tiempo de generación: 27-07-2024 a las 21:18:46
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -51,12 +51,14 @@ CREATE TABLE `asignacion_actividad` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `asignacion_bootcamp`
+-- Estructura de tabla para la tabla `asignacion_cuenta`
 --
 
-CREATE TABLE `asignacion_bootcamp` (
+CREATE TABLE `asignacion_cuenta` (
+  `Id_cuenta_bootcamp` int(11) NOT NULL,
   `Id_bootcamp` int(11) NOT NULL,
-  `Id_equipo` int(11) NOT NULL
+  `Id_cuenta` int(11) NOT NULL,
+  `Created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 -- --------------------------------------------------------
@@ -68,6 +70,17 @@ CREATE TABLE `asignacion_bootcamp` (
 CREATE TABLE `asignacion_encargado` (
   `Id_cuenta` int(11) NOT NULL,
   `Id_bootcamp` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `asignacion_equipo`
+--
+
+CREATE TABLE `asignacion_equipo` (
+  `Id_equipo` int(11) NOT NULL,
+  `Id_cuenta_bootcamp` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
 
 -- --------------------------------------------------------
@@ -171,7 +184,6 @@ CREATE TABLE `entrega` (
 
 CREATE TABLE `equipo` (
   `Id_equipo` int(11) NOT NULL,
-  `Id_cuenta` int(11) NOT NULL,
   `No_equipo` int(11) NOT NULL,
   `Created_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish_ci;
@@ -264,11 +276,12 @@ ALTER TABLE `asignacion_actividad`
   ADD KEY `Bootcamp` (`Id_bootcamp`);
 
 --
--- Indices de la tabla `asignacion_bootcamp`
+-- Indices de la tabla `asignacion_cuenta`
 --
-ALTER TABLE `asignacion_bootcamp`
+ALTER TABLE `asignacion_cuenta`
+  ADD PRIMARY KEY (`Id_cuenta_bootcamp`),
   ADD KEY `Bootcamp` (`Id_bootcamp`),
-  ADD KEY `Equipo` (`Id_equipo`);
+  ADD KEY `Cuenta` (`Id_cuenta`);
 
 --
 -- Indices de la tabla `asignacion_encargado`
@@ -276,6 +289,13 @@ ALTER TABLE `asignacion_bootcamp`
 ALTER TABLE `asignacion_encargado`
   ADD KEY `Encargado` (`Id_cuenta`),
   ADD KEY `Bootcamp` (`Id_bootcamp`);
+
+--
+-- Indices de la tabla `asignacion_equipo`
+--
+ALTER TABLE `asignacion_equipo`
+  ADD KEY `Equipo` (`Id_equipo`),
+  ADD KEY `Relacion` (`Id_cuenta_bootcamp`);
 
 --
 -- Indices de la tabla `asignacion_material`
@@ -332,8 +352,7 @@ ALTER TABLE `entrega`
 -- Indices de la tabla `equipo`
 --
 ALTER TABLE `equipo`
-  ADD PRIMARY KEY (`Id_equipo`),
-  ADD KEY `Cuenta` (`Id_cuenta`);
+  ADD PRIMARY KEY (`Id_equipo`);
 
 --
 -- Indices de la tabla `facultad`
@@ -380,6 +399,12 @@ ALTER TABLE `usuario`
 --
 ALTER TABLE `actividad`
   MODIFY `Id_actividad` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `asignacion_cuenta`
+--
+ALTER TABLE `asignacion_cuenta`
+  MODIFY `Id_cuenta_bootcamp` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `bootcamp`
@@ -447,11 +472,11 @@ ALTER TABLE `asignacion_actividad`
   ADD CONSTRAINT `asignacion_actividad_ibfk_2` FOREIGN KEY (`Id_actividad`) REFERENCES `actividad` (`Id_actividad`);
 
 --
--- Filtros para la tabla `asignacion_bootcamp`
+-- Filtros para la tabla `asignacion_cuenta`
 --
-ALTER TABLE `asignacion_bootcamp`
-  ADD CONSTRAINT `asignacion_bootcamp_ibfk_1` FOREIGN KEY (`Id_bootcamp`) REFERENCES `bootcamp` (`Id_bootcamp`),
-  ADD CONSTRAINT `asignacion_bootcamp_ibfk_2` FOREIGN KEY (`Id_equipo`) REFERENCES `equipo` (`Id_equipo`);
+ALTER TABLE `asignacion_cuenta`
+  ADD CONSTRAINT `asignacion_cuenta_ibfk_1` FOREIGN KEY (`Id_bootcamp`) REFERENCES `bootcamp` (`Id_bootcamp`),
+  ADD CONSTRAINT `asignacion_cuenta_ibfk_2` FOREIGN KEY (`Id_cuenta`) REFERENCES `cuenta` (`Id_cuenta`);
 
 --
 -- Filtros para la tabla `asignacion_encargado`
@@ -459,6 +484,13 @@ ALTER TABLE `asignacion_bootcamp`
 ALTER TABLE `asignacion_encargado`
   ADD CONSTRAINT `asignacion_encargado_ibfk_1` FOREIGN KEY (`Id_cuenta`) REFERENCES `cuenta` (`Id_cuenta`),
   ADD CONSTRAINT `asignacion_encargado_ibfk_2` FOREIGN KEY (`Id_bootcamp`) REFERENCES `bootcamp` (`Id_bootcamp`);
+
+--
+-- Filtros para la tabla `asignacion_equipo`
+--
+ALTER TABLE `asignacion_equipo`
+  ADD CONSTRAINT `asignacion_equipo_ibfk_1` FOREIGN KEY (`Id_cuenta_bootcamp`) REFERENCES `asignacion_cuenta` (`Id_cuenta_bootcamp`),
+  ADD CONSTRAINT `asignacion_equipo_ibfk_2` FOREIGN KEY (`Id_equipo`) REFERENCES `equipo` (`Id_equipo`);
 
 --
 -- Filtros para la tabla `asignacion_material`
@@ -499,12 +531,6 @@ ALTER TABLE `cuenta`
 ALTER TABLE `entrega`
   ADD CONSTRAINT `entrega_ibfk_1` FOREIGN KEY (`Id_actividad`) REFERENCES `actividad` (`Id_actividad`),
   ADD CONSTRAINT `entrega_ibfk_2` FOREIGN KEY (`Id_equipo`) REFERENCES `equipo` (`Id_equipo`);
-
---
--- Filtros para la tabla `equipo`
---
-ALTER TABLE `equipo`
-  ADD CONSTRAINT `equipo_ibfk_1` FOREIGN KEY (`Id_cuenta`) REFERENCES `cuenta` (`Id_cuenta`);
 
 --
 -- Filtros para la tabla `facultad`
